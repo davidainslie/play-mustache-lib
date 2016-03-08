@@ -1,0 +1,28 @@
+@(message: String)
+
+@libMain(message) {
+    <script id="example-template" type="text/html">
+        <h1>@message</h1>
+
+        <div>
+            <p>Library Author: {{author}}</p>
+            <p>Library Time: {{timeNow}}</p>
+        </div>
+    </script>
+}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var date = new Date();
+
+        var templateData = {
+            author: "David Ainslie",
+            timeNow: date.getHours() + ':' + date.getMinutes()
+        };
+
+        // Use jQuery to reference our 'example-template' script block and grab the HTML contents it contains.
+        var template = $('#example-template').html();
+
+        $('body').append(Mustache.render(template, templateData));
+    });
+</script>
