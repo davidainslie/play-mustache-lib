@@ -1,5 +1,5 @@
 package com.kissthinker.blah
 
 object Blah {
-  def blah = "No Blah"
+  def blah = "Blah Blah"
 }
